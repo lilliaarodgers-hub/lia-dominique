@@ -1,0 +1,284 @@
+@import "tailwindcss";
+
+@theme {
+  /* ── Brand Colors ── */
+  --color-ivory: #FDFAF6;
+  --color-cream: #F5EDE0;
+  --color-blush-light: #F5D8DE;
+  --color-blush: #EEC5CC;
+  --color-rose: #D4919F;
+  --color-mauve: #8B4A6B;
+  --color-mauve-dark: #6B3352;
+  --color-gold: #C9A050;
+  --color-gold-light: #E8D5A3;
+  --color-gold-dark: #A07830;
+  --color-noir: #1C1C1C;
+  --color-charcoal: #3D3535;
+  --color-muted: #8A7D7D;
+  --color-white: #FFFFFF;
+
+  /* ── Font Families ── */
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'DM Sans', system-ui, sans-serif;
+  --font-script: 'Great Vibes', cursive;
+
+  /* ── Spacing & Radius ── */
+  --radius-card: 0.75rem;
+  --radius-pill: 9999px;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-ivory);
+    color: var(--color-noir);
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-serif);
+    line-height: 1.15;
+    font-weight: 500;
+  }
+
+  ::selection {
+    background-color: var(--color-blush);
+    color: var(--color-mauve-dark);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-gold);
+    outline-offset: 3px;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+@layer components {
+  /* ── Buttons ── */
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.75rem 2rem;
+    background-color: var(--color-mauve);
+    color: var(--color-white);
+    font-family: var(--font-sans);
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    border-radius: var(--radius-pill);
+    transition: background-color 0.25s ease, transform 0.2s ease;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+  }
+
+  .btn-primary:hover {
+    background-color: var(--color-mauve-dark);
+    transform: translateY(-1px);
+  }
+
+  .btn-outline {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.75rem 2rem;
+    background-color: transparent;
+    color: var(--color-mauve);
+    font-family: var(--font-sans);
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    border-radius: var(--radius-pill);
+    border: 1.5px solid var(--color-mauve);
+    transition: all 0.25s ease;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .btn-outline:hover {
+    background-color: var(--color-mauve);
+    color: var(--color-white);
+    transform: translateY(-1px);
+  }
+
+  .btn-gold {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.75rem 2rem;
+    background-color: var(--color-gold);
+    color: var(--color-white);
+    font-family: var(--font-sans);
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    border-radius: var(--radius-pill);
+    transition: background-color 0.25s ease, transform 0.2s ease;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+  }
+
+  .btn-gold:hover {
+    background-color: var(--color-gold-dark);
+    transform: translateY(-1px);
+  }
+
+  /* ── Cards ── */
+  .card {
+    background-color: var(--color-white);
+    border-radius: var(--radius-card);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(139, 74, 107, 0.12);
+  }
+
+  /* ── Section containers ── */
+  .section-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .section-pad {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+
+  @media (min-width: 768px) {
+    .section-pad {
+      padding-top: 7rem;
+      padding-bottom: 7rem;
+    }
+  }
+
+  /* ── Section labels ── */
+  .section-label {
+    font-family: var(--font-sans);
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--color-gold);
+  }
+
+  /* ── Gold divider ── */
+  .gold-divider {
+    width: 3rem;
+    height: 1px;
+    background: linear-gradient(90deg, var(--color-gold), transparent);
+    margin: 1rem 0;
+  }
+
+  .gold-divider-center {
+    width: 3rem;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--color-gold), transparent);
+    margin: 1rem auto;
+  }
+
+  /* ── Script flourish ── */
+  .script {
+    font-family: var(--font-script);
+    color: var(--color-mauve);
+  }
+
+  /* ── Blog post prose ── */
+  .prose-ld h1,
+  .prose-ld h2,
+  .prose-ld h3,
+  .prose-ld h4 {
+    font-family: var(--font-serif);
+    color: var(--color-noir);
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+  }
+
+  .prose-ld h1 { font-size: 2.5rem; }
+  .prose-ld h2 { font-size: 2rem; }
+  .prose-ld h3 { font-size: 1.5rem; }
+
+  .prose-ld p {
+    color: var(--color-charcoal);
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+  }
+
+  .prose-ld a {
+    color: var(--color-mauve);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .prose-ld a:hover {
+    color: var(--color-mauve-dark);
+  }
+
+  .prose-ld ul,
+  .prose-ld ol {
+    padding-left: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--color-charcoal);
+  }
+
+  .prose-ld li {
+    margin-bottom: 0.5rem;
+    line-height: 1.7;
+  }
+
+  .prose-ld blockquote {
+    border-left: 3px solid var(--color-gold);
+    padding: 1rem 1.5rem;
+    margin: 2rem 0;
+    background: var(--color-cream);
+    border-radius: 0 0.5rem 0.5rem 0;
+    font-family: var(--font-serif);
+    font-size: 1.25rem;
+    color: var(--color-mauve);
+    font-style: italic;
+  }
+
+  .prose-ld img {
+    border-radius: var(--radius-card);
+    margin: 2rem 0;
+    width: 100%;
+    height: auto;
+  }
+
+  .prose-ld strong {
+    color: var(--color-noir);
+    font-weight: 600;
+  }
+
+  .prose-ld em {
+    color: var(--color-mauve);
+  }
+
+  .prose-ld hr {
+    border: none;
+    border-top: 1px solid var(--color-blush);
+    margin: 3rem 0;
+  }
+}
