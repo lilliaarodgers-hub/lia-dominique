@@ -17,9 +17,15 @@ const footerLinks = {
 }
 
 const socials = [
-  { label: 'Instagram', href: 'https://instagram.com/liadominique', icon: 'IG' },
-  { label: 'YouTube', href: 'https://youtube.com/@liadominique', icon: 'YT' },
-  { label: 'TikTok', href: 'https://tiktok.com/@liadominique', icon: 'TT' },
+  { label: 'TikTok', href: 'https://www.tiktok.com/@liadominique', icon: 'TT' },
+  { label: 'YouTube', href: 'https://www.youtube.com/@liadominique', icon: 'YT' },
+  { label: 'Substack', href: 'https://liadominique.substack.com', icon: 'SS' },
+  { label: 'Pinterest', href: 'https://www.pinterest.com/liadominique', icon: 'PI' },
+  { label: 'Lemon8', href: 'https://www.lemon8app.com/@liadominique', icon: 'L8' },
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/liadominique', icon: 'LI' },
+  { label: 'Patreon', href: 'https://www.patreon.com/liadominique', icon: 'PA' },
+  { label: 'Benable', href: 'https://benable.com/liadominique', icon: 'BE' },
+  { label: 'Amazon', href: 'https://www.amazon.com/shop/liadominique', icon: 'AZ' },
 ]
 
 export default function SiteFooter() {
